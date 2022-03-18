@@ -33,7 +33,7 @@ AHS 适用于所有产品和滤波器配置文件。 因此，即使使用 VRU �
   - 打开Device Settings窗口 -> Device Settings。
   - 勾选“Active Heading Stabilization (AHS)”。
   - 写入设备。
-  .. image:: image/ahs_settings.jpg
+  .. image:: ../image/ahs_settings.jpg
   此方法不适用于 GNSS/INS 设备。
   
 
