@@ -1,6 +1,5 @@
-https://xsenstechnologies.force.com/knowledgebase/s/article/Synchronization-with-the-MTi-1605869709711
-
-**Synchronization with the MTi(与 MTi 同步)**
+**`Synchronization with the MTi(与 MTi 同步) <https://xsenstechnologies.force.com/knowledgebase/s/article/Synchronization-with-the-MTi-1605869709711>`_**
+========================
 
 Nov 18, 2021•Knowledge Article
 
@@ -70,8 +69,8 @@ systems.
   本节将解释在使用多个测量系统时必须如何设置 MTi。
 |  
 
-**External device triggers MTi: SendLatest(外部设备触发
-MTi：SendLatest)**
+**External device triggers MTi: SendLatest(外部设备触发MTi：SendLatest)**
+------------
 
 SendLatest is used when an external device triggers the MTi.
 
@@ -84,7 +83,8 @@ SendLatest is used when an external device triggers the MTi.
 在下图中，显示了一种可能的配置，其中MTi传感器和设备 A 同步。
 在此示例中，时钟发生器触发设备 A 和 MTi，确保这两个设备彼此同步。
 
-| |Diagram Description automatically generated|
+.. image:: ../image/clock_generator_triggers.png
+
 | The output of the clock generator can be directly connected to the
   MTi.
 
@@ -123,8 +123,8 @@ when using the CAN interface.
   接口时，SendLatest 功能不可用。
 |  
 
-**Marker in MT Data: TriggerIndication (MT
-Data中的标记：TriggerIndication)**
+**Marker in MT Data: TriggerIndication (MTData中的标记：TriggerIndication)**
+------------
 
 Next to let the MTi send data to the computer, it is also possible to
 incorporate a trigger indication in the MTData2 packet (Status Word).
@@ -147,6 +147,7 @@ flag.
 |  
 
 **MTi triggers external device: SyncOut (MTi 触发外部设备：SyncOut)**
+------------
 
 The SyncOut (called Interval Transition Measurement as the SyncOut is
 generated on the transition between two 400 Hz intervals of the SDI) is
@@ -173,8 +174,8 @@ used to trigger other devices.
 无同步脉冲 等等。 每个脉冲后将跳过三个脉冲，从而产生 100 Hz 的输出信号。
 数据输出（例如方向）和频率与间隔转换测量的功能无关。
 
-.. image:: vertopal_62a9d09047c248febcc3f1e34f6f8dca/media/image2.png
-   :alt: Shape Description automatically generated
+.. image:: ../image/interval_transition_measurement.png
+   :alt: Interval Transition Measurement
    :width: 6.3in
    :height: 2.90625in
 
@@ -204,9 +205,8 @@ describes the different settings. 
 MTi 文档），或者如果您使用多用途
 电缆，您可以直接连接到终端接头的相应引脚。
 
-.. image:: vertopal_62a9d09047c248febcc3f1e34f6f8dca/media/image3.png
-   :alt: A picture containing text, electronics, kitchen appliance
-   Description automatically generated
+.. image:: ../image/mti_sync_with_camera.png
+   :alt: MTi Sync Out
    :width: 3.42222in
    :height: 1.61616in
 
@@ -216,8 +216,8 @@ external device matches the SyncOut specifications.
 | 始终检查输入电压电平和外部设备的输入阻抗是否符合 SyncOut 规格。
 |  
 
-**1 PPS output directly from GNSS receiver (1 PPS 直接从 GNSS
-接收器输出)**
+**1 PPS output directly from GNSS receiver (1 PPS 直接从 GNSS接收器输出)**
+------------
 
 Another possibility on the SyncOut line is the 1 PPS signal, that is
 coming directly from the GNSS receiver. This 1 PPS pulse has a duration
@@ -239,6 +239,7 @@ but it does not appear exactly at the integer second.
 |  
 
 **Synchronizing two clocks: ClockSync（同步两个时钟：ClockSync）**
+------------
 
 The MTi features clock synchronization: it is possible to adjust the
 bias of the MTi’s internal clock with an external clock of which the
@@ -336,6 +337,7 @@ Document <http://xsens.com/xsens-mti-documentation>`__ for more details.
 |  
 
 **StartSampling开始采样**
+------------
 
 One of the advanced timing features of the MTi is the StartSampling
 synchronization function. StartSampling will trigger the MTi to start
@@ -380,6 +382,7 @@ only.*
 |  
 
 **Combining sync functions结合同步功能**
+------------
 
 It is possible to configure multiple synchronization functions on the
 MTi. This can be useful if you need to synchronize multiple devices,
@@ -391,7 +394,8 @@ picture. 
 一个 GPS 设备（提供每秒 1 个脉冲 (PPS) 脉冲）、一个 MTi-300 和一个需要
 0.2 秒来拍摄照片的外部相机。
 
- |image1|
+.. image:: ../image/combine_sync.png
+   :alt: Combine sync functions
 
 In this example, you could use the GPS pulse to synchronize the clock of
 the MTi with the GPS clock (use Clock Bias Estimation), but you also
@@ -462,8 +466,8 @@ make the picture.
 |                                  | 39（到设备 B）                   |
 +----------------------------------+----------------------------------+
 
-**
-Common ground for Sync applications同步应用设备的共同接地**
+**Common ground for Sync applications同步应用设备的共同接地**
+------------
 
 Just as with the communication interface, it is required to have a
 common ground. This means that the ground of the MTi must be connected
@@ -479,16 +483,7 @@ communication may not start up. See the schematic below.
   请参阅下面的示意图。
 |  
 
-|Diagram, schematic Description automatically generated| 
+.. image:: ../image/common_ground.png
+   :alt: Common Ground
 
 电源、同步、主机（数据接口）和 MTi 的共同接地
-
-.. |Diagram Description automatically generated| image:: vertopal_62a9d09047c248febcc3f1e34f6f8dca/media/image1.png
-   :width: 3.65in
-   :height: 2.1719in
-.. |image1| image:: vertopal_62a9d09047c248febcc3f1e34f6f8dca/media/image4.png
-   :width: 6.3in
-   :height: 4.03958in
-.. |Diagram, schematic Description automatically generated| image:: vertopal_62a9d09047c248febcc3f1e34f6f8dca/media/image5.png
-   :width: 4.61667in
-   :height: 4.63333in
