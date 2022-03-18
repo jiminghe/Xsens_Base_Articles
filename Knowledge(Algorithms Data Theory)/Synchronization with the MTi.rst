@@ -1,5 +1,10 @@
-**`Synchronization with the MTi(与 MTi 同步) <https://xsenstechnologies.force.com/knowledgebase/s/article/Synchronization-with-the-MTi-1605869709711>`_**
+
+
+.. _doc_android_plugin:
+
+`Synchronization with the MTi(与 MTi 同步) <https://xsenstechnologies.force.com/knowledgebase/s/article/Synchronization-with-the-MTi-1605869709711>`__
 ========================
+
 
 Nov 18, 2021•Knowledge Article
 
